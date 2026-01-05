@@ -28,7 +28,7 @@ See the difference at **[dashboard-v4-eta.vercel.app](https://dashboard-v4-eta.v
 ```bash
 mkdir -p ~/.claude/skills/design-principles
 curl -o ~/.claude/skills/design-principles/skill.md \
-  https://raw.githubusercontent.com/YOUR_USERNAME/claude-design-skill/main/skill/skill.md
+  https://raw.githubusercontent.com/Dammyjay93/claude-design-skill/main/skill/skill.md
 ```
 
 ### Manual Install
