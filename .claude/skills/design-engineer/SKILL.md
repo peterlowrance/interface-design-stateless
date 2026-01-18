@@ -15,17 +15,34 @@ Build interface design with craft and consistency.
 
 ---
 
-# Before Writing Code
+# The Foundation: Subtle Layering
 
-State your design choices first. This keeps thinking deliberate.
+This is the backbone of craft. Regardless of direction, product type, or visual style — this principle applies to everything.
+
+**Surfaces must be barely different but still distinguishable.** Study Vercel, Supabase, Linear. Their elevation changes are so subtle you almost can't see them — but you feel the hierarchy. In dark mode, each elevation level is only a few percentage points lighter (7% → 9% → 12%). Not dramatic jumps. Not obviously different colors. Whisper-quiet shifts.
+
+**Borders must be light but not invisible.** Use low opacity (rgba with 0.05-0.12 alpha in dark mode). The border should disappear when you're not looking for it, but be findable when you need to understand structure. If borders are the first thing you notice, they're too strong. If you can't tell where regions begin and end, they're too weak.
+
+**The squint test:** Blur your eyes at the interface. You should still perceive hierarchy — what's above what, where sections divide. But nothing should jump out. No harsh lines. No jarring color shifts. Just quiet structure.
+
+This separates professional interfaces from amateur ones. Get this wrong and nothing else matters.
+
+---
+
+# Before Writing Each Component
+
+**Every time** you write UI code — even small additions — state:
 
 ```
-Direction: [what this should feel like]
-Depth: [borders / subtle shadows / layered]
-Spacing: [base unit]
+Depth: [your approach — borders / subtle shadows / layered]
+Surfaces: [your elevation scale — must be barely different, not dramatic]
+Borders: [your opacity — must be low, not solid colors]
+Spacing: [your base unit — all values must be multiples]
 ```
 
-Then write the code.
+This checkpoint is mandatory. It reinforces the backbone: **subtle layering**. Surfaces barely different but distinguishable. Borders light but not invisible. The specific values are yours to decide — the principle is not.
+
+If you can't state these confidently, re-read this file.
 
 ---
 
@@ -51,11 +68,16 @@ Sharper feels technical. Rounder feels friendly. Pick a scale and apply consiste
 ## Typography
 Headlines need weight and tight tracking. Body needs readability. Data needs monospace. Build a hierarchy.
 
-## Color
+## Color & Surfaces
 Gray builds structure. Color communicates meaning — status, action, emphasis. Decorative color is noise.
+
+Build from primitives: foreground (text hierarchy), background (surface elevation), border (separation hierarchy), brand, and semantic (destructive, warning, success). Every color should trace back to these. No random hex values — everything maps to the system.
 
 ## Animation
 Fast micro-interactions (~150ms), smooth easing. No bouncy/spring effects.
+
+## States
+Every interactive element needs states: default, hover, active, focus, disabled. Data needs states too: loading, empty, error. Missing states feel broken — this is often what separates polished interfaces from amateur ones.
 
 ## Controls
 Native `<select>` and `<input type="date">` can't be styled. Build custom components.
@@ -64,24 +86,30 @@ Native `<select>` and `<input type="date">` can't be styled. Build custom compon
 
 # Avoid
 
-- Dramatic drop shadows
-- Large radius on small elements
-- Pure white cards on colored backgrounds
-- Thick decorative borders
-- Excessive spacing (>48px margins)
-- Gradients for decoration
-- Multiple accent colors
+- **Harsh borders** — if borders are the first thing you see, they're too strong. Use low opacity rgba.
+- **Dramatic surface jumps** — elevation changes should be whisper-quiet, not obvious color shifts
+- **Inconsistent spacing** — the clearest sign of no system
+- **Mixed depth strategies** — if borders, commit to borders throughout
+- **Missing interaction states** — hover, focus, disabled, loading, error
+- **Dramatic drop shadows** — shadows should be subtle layers, not attention-grabbing
+- **Large radius on small elements**
+- **Pure white cards on colored backgrounds**
+- **Thick decorative borders**
+- **Gradients and color for decoration** — color should communicate meaning
+- **Multiple accent colors** — dilutes focus
 
 ---
 
 # Self-Check
 
 Before finishing:
-- Did I think about what this product needs, or default?
-- Is my depth strategy consistent throughout?
-- Does every element feel intentional?
+- **Squint test** — can you still see hierarchy with blurred eyes? Nothing jumping out?
+- **Border check** — are borders subtle enough to disappear when not needed?
+- **Surface check** — are elevation changes whisper-quiet, not dramatic?
+- **Depth consistency** — one strategy throughout?
+- **States complete** — hover, focus, disabled, loading, error?
 
-The standard: looks designed by someone who obsesses over details.
+The standard: looks like Vercel, Supabase, Linear — quiet, professional, every detail considered.
 
 ---
 
