@@ -1,13 +1,12 @@
 {
   "name": "interface-design",
-  "description": "Design engineering for Claude Code. Build interfaces with craft, memory, and consistency. Maintains design decisions across sessions.",
-  "version": "2026.2.9.1212",
+  "description": "Design engineering for Claude Code. Build interfaces with craft and consistency.",
+  "version": "2026.2.11.1",
   "author": {
-    "name": "Damola Akinleye",
-    "url": "https://github.com/Dammyjay93"
+    "name": "Peter Lowrance",
+    "url": "https://github.com/peterlowrance"
   },
-  "homepage": "https://github.com/Dammyjay93/interface-design",
-  "repository": "https://github.com/Dammyjay93/interface-design",
-  "commands": "./.claude/commands",
+  "homepage": "https://github.com/peterlowrance/interface-design-stateless",
+  "repository": "https://github.com/peterlowrance/interface-design-stateless",
   "skills": "./.claude/skills"
 }

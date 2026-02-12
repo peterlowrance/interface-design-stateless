@@ -2,25 +2,25 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "interface-design",
   "metadata": {
-    "description": "Design engineering for Claude Code. Build interfaces with craft, memory, and enforcement."
+    "description": "Design engineering for Claude Code. Build interfaces with craft and consistency."
   },
   "owner": {
-    "name": "Damola Akinleye",
-    "url": "https://github.com/Dammyjay93"
+    "name": "Peter Lowrance",
+    "url": "https://github.com/peterlowrance"
   },
   "plugins": [
     {
       "name": "interface-design",
-      "description": "Design engineering for Claude Code. Build interfaces with craft, memory, and enforcement. Maintains consistent design decisions across sessions.",
-      "version": "2026.2.9.1212",
+      "description": "Design engineering for Claude Code. Build interfaces with craft and consistency.",
+      "version": "2026.2.11.1",
       "author": {
-        "name": "Damola Akinleye",
-        "url": "https://github.com/Dammyjay93"
+        "name": "Peter Lowrance",
+        "url": "https://github.com/peterlowrance"
       },
       "source": "./",
       "category": "design",
-      "homepage": "https://github.com/Dammyjay93/interface-design",
-      "tags": ["design", "design-system", "ui", "craft", "memory", "enforcement", "consistency", "tokens"]
+      "homepage": "https://github.com/peterlowrance/interface-design-stateless",
+      "tags": ["design", "design-system", "ui", "craft", "consistency"]
     }
   ]
 }

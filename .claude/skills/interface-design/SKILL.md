@@ -320,7 +320,7 @@ Dark interfaces have different needs. Shadows are less visible on dark backgroun
 ## Communication
 Be invisible. Don't announce modes or narrate process.
 
-**Never say:** "I'm in ESTABLISH MODE", "Let me check system.md..."
+**Never say:** "I'm in ESTABLISH MODE", "Let me check the design system..."
 
 **Instead:** Jump into work. State suggestions with reasoning.
 
@@ -337,55 +337,68 @@ Direction: [approach that connects to the above]"
 [Ask: "Does that direction feel right?"]
 ```
 
-## If Project Has system.md
-Read `.interface-design/system.md` and apply. Decisions are made.
-
-## If No system.md
+## Flow
 1. Explore domain — Produce all four required outputs
 2. Propose — Direction must reference all four
 3. Confirm — Get user buy-in
 4. Build — Apply principles
-5. **Evaluate** — Run the mandate checks before showing
-6. Offer to save
+5. **Critique** — Before showing, run the post-build evaluation below
 
 ---
 
-# After Completing a Task
+# Post-Build Evaluation
 
-When you finish building something, **always offer to save**:
+Your first build shipped the structure. Now look at it the way a design lead reviews a junior's work — not asking "does this work?" but "would I put my name on this?"
 
-```
-"Want me to save these patterns for future sessions?"
-```
+There's a distance between correct and crafted. Correct means the layout holds, the grid aligns, the colors don't clash. Crafted means someone cared about every decision down to the last pixel. Your first output lives in correct. This step pulls it toward crafted.
 
-If yes, write to `.interface-design/system.md`:
-- Direction and feel
-- Depth strategy (borders/shadows/layered)
-- Spacing base unit
-- Key component patterns
+## See the Composition
 
-### What to Save
+Step back. Look at the whole thing.
 
-Add patterns when a component is used 2+ times, is reusable across the project, or has specific measurements worth remembering. Don't save one-off components, temporary experiments, or variations better handled with props.
+Does the layout have rhythm? Great interfaces breathe unevenly — dense tooling areas give way to open content, heavy elements balance against light ones, the eye travels through the page with purpose. Default layouts are monotone: same card size, same gaps, same density everywhere. Flatness is the sound of no one deciding.
 
-### Consistency Checks
+Are proportions doing work? A 280px sidebar next to full-width content says "navigation serves content." A 360px sidebar says "these are peers." The specific number declares what matters. If you can't articulate what your proportions are saying, they're not saying anything.
 
-If system.md defines values, check against them: spacing on the defined grid, depth using the declared strategy throughout, colors from the defined palette, documented patterns reused instead of reinvented.
+Is there a clear focal point? Every screen has one thing the user came here to do. That thing should dominate — through size, position, contrast, or the space around it. When everything competes equally, nothing wins and the interface feels like a parking lot.
 
-This compounds — each save makes future work faster and more consistent.
+## See the Craft
+
+Move close. Pixel-close.
+
+The spacing grid is non-negotiable — every value a multiple of 4, no exceptions — but correctness alone isn't craft. Craft is knowing that a tool panel at 16px padding feels workbench-tight while the same card at 24px feels like a brochure. The same number can be right in one context and lazy in another. Density is a design decision, not a constant.
+
+Typography should be legible even squinted. If size is the only thing separating your headline from your body from your label, the hierarchy is too weak. Weight, tracking, and opacity create layers that size alone can't.
+
+Surfaces should whisper hierarchy. Not thick borders, not dramatic shadows — quiet tonal shifts where you feel the depth without seeing it. Remove every border from your CSS mentally. Can you still perceive the structure through surface color alone? If not, your surfaces aren't working hard enough.
+
+Interactive elements need life. Every button, link, and clickable region should respond to hover and press. Not dramatically — a subtle shift in background, a gentle darkening. Missing states make an interface feel like a photograph of software instead of software.
+
+## See the Content
+
+Read every visible string as a user would. Not checking for typos — checking for truth.
+
+Does this screen tell one coherent story? Could a real person at a real company be looking at exactly this data right now? Or does the page title belong to one product, the article body to another, and the sidebar metrics to a third?
+
+Content incoherence breaks the illusion faster than any visual flaw. A beautifully designed interface with nonsensical content is a movie set with no script.
+
+## See the Structure
+
+Open the CSS and find the lies — the places that look right but are held together with tape.
+
+Negative margins undoing a parent's padding. Calc() values that exist only as workarounds. Absolute positioning to escape layout flow. Each is a shortcut where a clean solution exists. The correct answer is always simpler than the hack.
+
+## Again
+
+Ask: "If they said this lacks craft, what would they point to?"
+
+That thing you just thought of — fix it. Then ask again.
+
+The first build was the draft. The critique is the design. Do not narrate the critique to the user. Do the work. Show the result.
 
 ---
 
-# Deep Dives
+# References
 
-For more detail on specific topics:
-- `references/principles.md` — Code examples, specific values, dark mode
-- `references/validation.md` — Memory management, when to update system.md
-- `references/critique.md` — Post-build craft critique protocol
-
-# Commands
-
-- `/interface-design:status` — Current system state
-- `/interface-design:audit` — Check code against system
-- `/interface-design:extract` — Extract patterns from code
-- `/interface-design:critique` — Critique your build for craft, then rebuild what defaulted
+- `references/principles.md` — Technical specifics, token architecture, code examples
+- `references/example.md` — Practical examples of subtle layering decisions
